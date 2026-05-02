@@ -1,0 +1,134 @@
+[
+     {
+    "id": 1,
+    "name": "UV Protection Sunglasses",
+    "brand": "SunShade",
+    "price": 15,
+    "rating": 4.7,
+    "stock": 10,
+    "description": "Stylish UV protection sunglasses perfect for summer outings.",
+    "image": "https://i.postimg.cc/8Ck7F1hM/sunglass.png",
+    "category": "Accessories"
+  },
+  {
+    "id": 2,
+    "name": "Beach Hat",
+    "brand": "CoolWear",
+    "price": 12,
+    "rating": 4.5,
+    "stock": 8,
+    "description": "Stay cool under the sun with this stylish beach hat.",
+    "image": "https://i.postimg.cc/3x3QzSGq/hat.png",
+    "category": "Fashion"
+  },
+  {
+    "id": 3,
+    "name": "Wireless Bluetooth Earbuds",
+    "brand": "SoundMax",
+    "price": 25,
+    "rating": 4.6,
+    "stock": 15,
+    "description": "Compact wireless earbuds with high-quality sound and long battery life.",
+    "image": "https://i.postimg.cc/earbuds.png",
+    "category": "Electronics"
+  },
+  {
+    "id": 4,
+    "name": "Smart Fitness Band",
+    "brand": "FitPro",
+    "price": 30,
+    "rating": 4.4,
+    "stock": 20,
+    "description": "Track your daily activity, heart rate, and sleep with this smart fitness band.",
+    "image": "https://i.postimg.cc/fitnessband.png",
+    "category": "Electronics"
+  },
+  {
+    "id": 5,
+    "name": "Men's Casual T-Shirt",
+    "brand": "UrbanStyle",
+    "price": 10,
+    "rating": 4.3,
+    "stock": 25,
+    "description": "Comfortable and stylish casual t-shirt for everyday wear.",
+    "image": "https://i.postimg.cc/tshirt.png",
+    "category": "Fashion"
+  },
+  {
+    "id": 6,
+    "name": "Leather Wallet",
+    "brand": "ClassicCraft",
+    "price": 18,
+    "rating": 4.5,
+    "stock": 12,
+    "description": "Premium leather wallet with multiple card slots and a sleek design.",
+    "image": "https://i.postimg.cc/wallet.png",
+    "category": "Accessories"
+  },
+  {
+    "id": 7,
+    "name": "Running Shoes",
+    "brand": "SpeedX",
+    "price": 40,
+    "rating": 4.7,
+    "stock": 10,
+    "description": "Lightweight running shoes designed for comfort and performance.",
+    "image": "https://i.postimg.cc/shoes.png",
+    "category": "Footwear"
+  },
+  {
+    "id": 8,
+    "name": "Laptop Backpack",
+    "brand": "CarryPro",
+    "price": 22,
+    "rating": 4.6,
+    "stock": 14,
+    "description": "Durable backpack with padded compartments for laptops and accessories.",
+    "image": "https://i.postimg.cc/backpack.png",
+    "category": "Bags"
+  },
+  {
+    "id": 9,
+    "name": "Portable Power Bank",
+    "brand": "ChargeIt",
+    "price": 20,
+    "rating": 4.5,
+    "stock": 18,
+    "description": "High-capacity power bank to keep your devices charged on the go.",
+    "image": "https://i.postimg.cc/powerbank.png",
+    "category": "Electronics"
+  },
+  {
+    "id": 10,
+    "name": "Analog Wrist Watch",
+    "brand": "TimeZone",
+    "price": 35,
+    "rating": 4.4,
+    "stock": 9,
+    "description": "Elegant analog watch suitable for both formal and casual occasions.",
+    "image": "https://i.postimg.cc/watch.png",
+    "category": "Accessories"
+  },
+  {
+    "id": 11,
+    "name": "Gaming Mouse",
+    "brand": "ProGamer",
+    "price": 28,
+    "rating": 4.6,
+    "stock": 16,
+    "description": "Ergonomic gaming mouse with customizable DPI and RGB lighting.",
+    "image": "https://i.postimg.cc/mouse.png",
+    "category": "Electronics"
+  },
+  {
+    "id": 12,
+    "name": "Water Bottle",
+    "brand": "HydroLife",
+    "price": 8,
+    "rating": 4.3,
+    "stock": 30,
+    "description": "Reusable water bottle perfect for daily hydration.",
+    "image": "https://i.postimg.cc/bottle.png",
+    "category": "Lifestyle"
+  }
+]
