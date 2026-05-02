@@ -5,11 +5,14 @@ export default function ProductCard({ product }) {
   return (
     <div className="border rounded-xl p-4 shadow hover:shadow-lg transition-all">
       
-      <Image 
-        src={product.image} 
-        alt={product.name} 
-        className="w-full h-48 object-cover rounded-lg"
-      />
+      <div className="relative w-full h-48">
+  <Image
+    src={product.image}
+    alt={product.name}
+    fill
+    className="object-cover rounded-lg"
+  />
+</div>
 
       <h2 className="text-lg font-semibold mt-3">
         {product.name}
