@@ -2,22 +2,33 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { signIn } from "../../lib/auth-client";
 
 export default function LoginPage() {
   const router = useRouter();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   async function handleLogin() {
-    // demo flow (BetterAuth integration later)
-    console.log(email, password);
+    setError("");
+
+    const res = await signIn.email({
+      email,
+      password,
+    });
+
+    if (res.error) {
+      setError(res.error.message);
+      return;
+    }
 
     router.push("/");
   }
 
   return (
     <div className="max-w-md mx-auto p-10">
-
       <h1 className="text-2xl font-bold mb-6">Login</h1>
 
       <input
@@ -33,13 +44,14 @@ export default function LoginPage() {
         onChange={(e) => setPassword(e.target.value)}
       />
 
+      {error && <p className="text-red-500">{error}</p>}
+
       <button
         onClick={handleLogin}
         className="bg-orange-500 text-white px-4 py-2 w-full"
       >
         Login
       </button>
-
     </div>
   );
 }

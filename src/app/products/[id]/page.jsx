@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { redirect } from "next/navigation";
 
 async function getProduct(id) {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "";
@@ -11,16 +12,14 @@ async function getProduct(id) {
 }
 
 export default async function ProductDetails({ params }) {
-    // new add
-  const isLoggedIn = false; // later real auth replace
-  if (!isLoggedIn) {
-    redirect("/login");
-  }
-  
+//   const session = await auth.api.getSession();
+
+//   if (!session) {
+//     redirect("/login");
+//   }
   // ✅ Properly unwrap params with await for Next.js 16
   const { id } = await params;
   const product = await getProduct(id);
-  console.log(product);
 
   if (!product) {
     return <p className="p-10 text-center">Product not found</p>;

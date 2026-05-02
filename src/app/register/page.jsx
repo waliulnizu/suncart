@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { signUp } from "../../lib/auth-client";
+
 
 export default function RegisterPage() {
   const router = useRouter();
@@ -12,15 +14,27 @@ export default function RegisterPage() {
     password: "",
   });
 
-  async function handleRegister() {
-    console.log(form);
+  const [error, setError] = useState("");
 
-    router.push("/login");
+  async function handleRegister() {
+    setError("");
+
+    const res = await signUp.email({
+      email: form.email,
+      password: form.password,
+      name: form.name,
+    });
+
+    if (res.error) {
+      setError(res.error.message);
+      return;
+    }
+
+    router.push("/");
   }
 
   return (
     <div className="max-w-md mx-auto p-10">
-
       <h1 className="text-2xl font-bold mb-6">Register</h1>
 
       <input
@@ -42,13 +56,14 @@ export default function RegisterPage() {
         onChange={(e) => setForm({ ...form, password: e.target.value })}
       />
 
+      {error && <p className="text-red-500">{error}</p>}
+
       <button
         onClick={handleRegister}
         className="bg-orange-500 text-white px-4 py-2 w-full"
       >
         Register
       </button>
-
     </div>
   );
 }
