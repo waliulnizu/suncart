@@ -1,7 +1,7 @@
 import ProductCard from "@/components/ui/ProductCard";
 
 async function getProducts() {
-  const res = await fetch("http://localhost:3000/products.json", {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/products.json`, {
     cache: "no-store",
   });
 
