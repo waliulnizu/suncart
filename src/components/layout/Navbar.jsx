@@ -4,30 +4,54 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <nav className="w-full border-b bg-white">
-      <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-        
-        {/* Logo */}
-        <div className="text-xl font-bold">
-          <Link href="/">SunCart</Link>
-        </div>
+    <nav className="sticky top-0 z-50 bg-white">
+      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        {/* Logo Section */}
+        <Link href="/" className="flex items-center gap-3 group">
+          <div className="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-110">
+            <span className="text-white text-xl font-bold">☀️</span>
+          </div>
+          <div>
+            <h1 className="text-2xl font-bold text-orange-600">SunCart</h1>
+            <p className="text-xs text-gray-500">Solar Solutions</p>
+          </div>
+        </Link>
 
-        {/* Links */}
-        <div className="hidden md:flex gap-6">
-          <Link href="/">Home</Link>
-          <Link href="/products">Products</Link>
-          <Link href="/profile">My Profile</Link>
+        {/* Navigation Links */}
+        <div className="hidden md:flex gap-10">
+          <NavLink href="/">Home</NavLink>
+          <NavLink href="/products">Products</NavLink>
+          <NavLink href="/profile">My Profile</NavLink>
         </div>
 
         {/* Auth Buttons */}
-        <div className="flex gap-3">
-          <button className="px-4 py-1 border rounded">Login</button>
-          <button className="px-4 py-1 bg-black text-white rounded">
+        <div className="flex gap-3 items-center">
+          <Link 
+            href="/login"
+            className="px-6 py-2.5 text-orange-600 font-semibold rounded-lg border-2 border-orange-300 hover:bg-orange-50 active:scale-95"
+          >
+            Login
+          </Link>
+          <Link 
+            href="/register"
+            className="px-6 py-2.5 bg-orange-500 text-white font-semibold rounded-lg shadow-lg hover:bg-orange-600 hover:shadow-xl active:scale-95"
+          >
             Register
-          </button>
+          </Link>
         </div>
-
       </div>
     </nav>
+  );
+}
+
+function NavLink({ href, children }) {
+  return (
+    <Link 
+      href={href}
+      className="relative font-medium text-gray-700 group"
+    >
+      {children}
+      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-400 to-yellow-400 group-hover:w-full"></span>
+    </Link>
   );
 }
