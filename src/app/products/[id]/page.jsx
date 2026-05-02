@@ -1,5 +1,7 @@
+import { headers } from "next/headers";
 import Image from "next/image";
 import { redirect } from "next/navigation";
+import { auth } from "@/lib/auth";
 
 async function getProduct(id) {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "";
@@ -12,13 +14,17 @@ async function getProduct(id) {
 }
 
 export default async function ProductDetails({ params }) {
-//   const session = await auth.api.getSession();
-
-//   if (!session) {
-//     redirect("/login");
-//   }
-  // ✅ Properly unwrap params with await for Next.js 16
   const { id } = await params;
+  
+  const session = await auth.api.getSession({
+    headers: await headers(),
+  });
+
+  if (!session) {
+    // Redirect to login with callback URL to return here after login
+    redirect(`/login?callbackUrl=/products/${id}`);
+  }
+
   const product = await getProduct(id);
 
   if (!product) {

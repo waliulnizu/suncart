@@ -1,11 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { signIn } from "../../lib/auth-client";
 
 export default function LoginPage() {
   const router = useRouter();
+
+   const searchParams = useSearchParams();
+
+  const callbackUrl = searchParams.get("callbackUrl") || "/";
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -24,7 +28,7 @@ export default function LoginPage() {
       return;
     }
 
-    router.push("/");
+    router.push(callbackUrl);
   }
 
   return (

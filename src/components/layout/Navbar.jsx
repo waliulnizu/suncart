@@ -1,10 +1,13 @@
 "use client";
 
 import Link from "next/link";
+import { useSession, signOut } from "@/lib/auth-client";
 
 export default function Navbar() {
+  const { data: session, isPending } = useSession();
+
   return (
-    <nav className="sticky top-0 z-50 bg-white">
+    <nav className="sticky top-0 z-50 bg-white shadow-md">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo Section */}
         <Link href="/" className="flex items-center gap-3 group">
@@ -21,23 +24,47 @@ export default function Navbar() {
         <div className="hidden md:flex gap-10">
           <NavLink href="/">Home</NavLink>
           <NavLink href="/products">Products</NavLink>
-          <NavLink href="/profile">My Profile</NavLink>
+          {session && <NavLink href="/profile">My Profile</NavLink>}
         </div>
 
-        {/* Auth Buttons */}
+        {/* Auth Section */}
         <div className="flex gap-3 items-center">
-          <Link 
-            href="/login"
-            className="px-6 py-2.5 text-orange-600 font-semibold rounded-lg border-2 border-orange-300 hover:bg-orange-50 active:scale-95"
-          >
-            Login
-          </Link>
-          <Link 
-            href="/register"
-            className="px-6 py-2.5 bg-orange-500 text-white font-semibold rounded-lg shadow-lg hover:bg-orange-600 hover:shadow-xl active:scale-95"
-          >
-            Register
-          </Link>
+          {isPending && (
+            <span className="text-gray-500 text-sm">Loading...</span>
+          )}
+
+          {!session && !isPending && (
+            <>
+              <Link 
+                href="/login"
+                className="px-6 py-2.5 text-orange-600 font-semibold rounded-lg border-2 border-orange-300 hover:bg-orange-50 active:scale-95"
+              >
+                Login
+              </Link>
+              <Link 
+                href="/register"
+                className="px-6 py-2.5 bg-orange-500 text-white font-semibold rounded-lg shadow-lg hover:bg-orange-600 hover:shadow-xl active:scale-95"
+              >
+                Register
+              </Link>
+            </>
+          )}
+
+          {session && !isPending && (
+            <div className="flex items-center gap-4">
+              <img
+                src={session.user.image || "https://i.ibb.co/4pDNDk1/avatar.png"}
+                className="w-10 h-10 rounded-full border-2 border-orange-400"
+                alt="user"
+              />
+              <button
+                onClick={() => signOut()}
+                className="px-4 py-2 bg-red-500 text-white font-semibold rounded-lg hover:bg-red-600 active:scale-95"
+              >
+                Logout
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </nav>
