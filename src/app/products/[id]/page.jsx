@@ -2,14 +2,9 @@ import { headers } from "next/headers";
 import Image from "next/image";
 import { redirect } from "next/navigation";
 import { auth } from "@/lib/auth";
+import products from "../../../../public/products.json";
 
 async function getProduct(id) {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "";
-  const res = await fetch(`${baseUrl}/products.json`, {
-    cache: "no-store",
-  });
-
-  const products = await res.json();
   return products.find((p) => p.id == id);
 }
 

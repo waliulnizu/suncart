@@ -1,5 +1,5 @@
 [
-     {
+  {
     "id": 1,
     "name": "UV Protection Sunglasses",
     "brand": "SunShade",
@@ -7,7 +7,7 @@
     "rating": 4.7,
     "stock": 10,
     "description": "Stylish UV protection sunglasses perfect for summer outings.",
-    "image": "https://i.postimg.cc/8Ck7F1hM/sunglass.png",
+    "image": "https://images.unsplash.com/photo-1511499767150-a48a237f0083",
     "category": "Accessories"
   },
   {
@@ -18,7 +18,7 @@
     "rating": 4.5,
     "stock": 8,
     "description": "Stay cool under the sun with this stylish beach hat.",
-    "image": "https://i.postimg.cc/3x3QzSGq/hat.png",
+    "image": "https://images.unsplash.com/photo-1521369909029-2afed882baee",
     "category": "Fashion"
   },
   {
@@ -29,7 +29,7 @@
     "rating": 4.6,
     "stock": 15,
     "description": "Compact wireless earbuds with high-quality sound and long battery life.",
-    "image": "https://i.postimg.cc/earbuds.png",
+    "image": "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=800&q=80",
     "category": "Electronics"
   },
   {
@@ -40,7 +40,7 @@
     "rating": 4.4,
     "stock": 20,
     "description": "Track your daily activity, heart rate, and sleep with this smart fitness band.",
-    "image": "https://i.postimg.cc/fitnessband.png",
+    "image": "https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6",
     "category": "Electronics"
   },
   {
@@ -51,7 +51,7 @@
     "rating": 4.3,
     "stock": 25,
     "description": "Comfortable and stylish casual t-shirt for everyday wear.",
-    "image": "https://i.postimg.cc/tshirt.png",
+    "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab",
     "category": "Fashion"
   },
   {
@@ -62,7 +62,7 @@
     "rating": 4.5,
     "stock": 12,
     "description": "Premium leather wallet with multiple card slots and a sleek design.",
-    "image": "https://i.postimg.cc/wallet.png",
+    "image": "https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&w=800&q=80",
     "category": "Accessories"
   },
   {
@@ -73,7 +73,7 @@
     "rating": 4.7,
     "stock": 10,
     "description": "Lightweight running shoes designed for comfort and performance.",
-    "image": "https://i.postimg.cc/shoes.png",
+    "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80",
     "category": "Footwear"
   },
   {
@@ -84,7 +84,7 @@
     "rating": 4.6,
     "stock": 14,
     "description": "Durable backpack with padded compartments for laptops and accessories.",
-    "image": "https://i.postimg.cc/backpack.png",
+    "image": "https://images.unsplash.com/photo-1581605405669-fcdf81165afa",
     "category": "Bags"
   },
   {
@@ -95,7 +95,7 @@
     "rating": 4.5,
     "stock": 18,
     "description": "High-capacity power bank to keep your devices charged on the go.",
-    "image": "https://i.postimg.cc/powerbank.png",
+    "image": "https://images.unsplash.com/photo-1580910051074-3eb694886505",
     "category": "Electronics"
   },
   {
@@ -106,7 +106,7 @@
     "rating": 4.4,
     "stock": 9,
     "description": "Elegant analog watch suitable for both formal and casual occasions.",
-    "image": "https://i.postimg.cc/watch.png",
+    "image": "https://images.unsplash.com/photo-1519741497674-611481863552",
     "category": "Accessories"
   },
   {
@@ -117,7 +117,7 @@
     "rating": 4.6,
     "stock": 16,
     "description": "Ergonomic gaming mouse with customizable DPI and RGB lighting.",
-    "image": "https://i.postimg.cc/mouse.png",
+    "image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7",
     "category": "Electronics"
   },
   {
@@ -128,7 +128,7 @@
     "rating": 4.3,
     "stock": 30,
     "description": "Reusable water bottle perfect for daily hydration.",
-    "image": "https://i.postimg.cc/bottle.png",
+    "image": "https://images.unsplash.com/photo-1523362628745-0c100150b504",
     "category": "Lifestyle"
   }
 ]

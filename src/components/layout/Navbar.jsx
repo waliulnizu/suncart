@@ -52,11 +52,17 @@ export default function Navbar() {
 
           {session && !isPending && (
             <div className="flex items-center gap-4">
-              <img
-                src={session.user.image || "https://i.ibb.co/4pDNDk1/avatar.png"}
-                className="w-10 h-10 rounded-full border-2 border-orange-400"
-                alt="user"
-              />
+              <Link href="/profile">
+                <img
+                  src={session.user.image || `https://ui-avatars.com/api/?name=${session.user.name}&background=f97316&color=fff`}
+                  className="w-10 h-10 rounded-full border-2 border-orange-400 cursor-pointer hover:scale-105 transition-transform"
+                  alt="user"
+                  referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    e.currentTarget.src = `https://ui-avatars.com/api/?name=${session.user.name}&background=f97316&color=fff`;
+                  }}
+                />
+              </Link>
               <button
                 onClick={() => signOut()}
                 className="px-4 py-2 bg-red-500 text-white font-semibold rounded-lg hover:bg-red-600 active:scale-95"

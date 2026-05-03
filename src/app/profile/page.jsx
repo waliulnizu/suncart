@@ -13,19 +13,19 @@ export default function ProfilePage() {
     return <p className="p-10">Please login first</p>;
   }
 
-  const userImage = session.user.image || "https://i.ibb.co/4pDNDk1/avatar.png";
+  const userImage = session.user.image || `https://ui-avatars.com/api/?name=${session.user.name}&background=f97316&color=fff`;
 
   return (
     <div className="max-w-md mx-auto p-10 text-center">
 
       <div className="relative w-24 h-24 mx-auto mb-4">
-        <Image
+        <img
           src={userImage}
           alt={session.user.name || "User"}
-          fill
-          className="rounded-full object-cover"
+          className="w-24 h-24 rounded-full object-cover border-4 border-orange-100 shadow-lg"
+          referrerPolicy="no-referrer"
           onError={(e) => {
-            e.currentTarget.src = "https://i.ibb.co/4pDNDk1/avatar.png";
+            e.currentTarget.src = `https://ui-avatars.com/api/?name=${session.user.name}&background=f97316&color=fff`;
           }}
         />
       </div>
