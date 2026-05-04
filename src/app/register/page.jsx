@@ -30,8 +30,8 @@ export default function RegisterPage() {
       return;
     }
 
-    // ✅ Redirect to login page as per criteria
-    router.push("/login");
+    // ✅ Professional UX: Redirect to home page after auto-login
+    router.push("/");
   }
 
   return (
