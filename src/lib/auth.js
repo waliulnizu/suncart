@@ -17,16 +17,24 @@ export const auth = betterAuth({
   emailAndPassword: {
     enabled: true,
   },
-  // Better Auth requires a baseURL. 
-  // It will use BETTER_AUTH_URL from your .env or VERCEL_URL on Vercel.
-  baseURL: process.env.BETTER_AUTH_URL || (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000"),
+  socialProviders: {
+    google: {
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      prompt: "select_account",
+    },
+  },
+  // ⚡ Smart BaseURL Detection
+  baseURL: (process.env.NODE_ENV === "development") 
+    ? "http://localhost:3000" 
+    : (process.env.BETTER_AUTH_URL || `https://${process.env.VERCEL_URL}`),
+  
   basePath: "/api/auth",
   secret: process.env.BETTER_AUTH_SECRET,
   trustedOrigins: [
-    process.env.BETTER_AUTH_URL,
-    process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : undefined,
+    "http://localhost:3000",
     "https://suncart-xi.vercel.app",
-    "http://localhost:3000"
+    process.env.BETTER_AUTH_URL
   ].filter(Boolean),
   plugins: [nextCookies()]
 });
