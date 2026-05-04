@@ -16,10 +16,13 @@ function LoginContent() {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    if (session) {
+    // শুধুমাত্র যদি callbackUrl ডিফল্ট না হয় (অর্থাৎ কোনো প্রটেক্টড পেজ থেকে আসলে)
+    // অথবা যদি ইউজার ম্যানুয়ালি লগইন পেজে আসে তখন রিডাইরেক্ট হবে
+    const hasCallback = searchParams.has("callbackUrl");
+    if (session && hasCallback) {
       router.push(callbackUrl);
     }
-  }, [session, router, callbackUrl]);
+  }, [session, router, callbackUrl, searchParams]);
 
   async function handleLogin() {
     setError("");
